@@ -1,0 +1,122 @@
+import mongoose, { Schema } from 'mongoose';
+
+const resumeSchema=new Schema({
+    resumeId:{
+        type:String
+    },
+    resumeName:{
+        type:String,
+        required:true
+    },
+    email:{
+        type:String,
+    },
+    username:{
+        type:String
+    },
+    firstName:{
+        type:String
+    },
+    lastName:{
+        type:String
+    },
+    address:{
+        type:String
+    },
+    phone:{
+        type:String
+    },
+    jobTitle:{
+        type:String
+    },
+    userEmail:{
+        type:String
+    },
+    summery:{
+        type:String
+    },
+    educationList:[
+        {
+            UniversityName:{
+                type:String
+            },
+            degree:{
+                type:String
+    
+            },
+            major:{
+                type:String
+            },
+            startDate:{
+                type:Date
+            },
+            endDate:{
+                type:Date
+            },
+    
+        }
+    ],
+    skill:[
+        {
+            name:{
+                type:String
+            },
+            rating:{
+                type:Number
+            }
+        }
+    ],
+    experienceList:[
+        {
+              title:{
+                type:String
+              },
+              companyName:{
+                type:String
+              },
+              city:{
+                type:String
+              },
+              state:{
+                type:String
+              },
+              startDate:{
+                type:Date
+              },
+              endDate:{
+                type:Date
+              },
+              workSummery:{
+                type:String
+              }
+
+        }
+    ],
+    projectList:[
+        {
+             projectName:{
+                type:String
+             },
+             projectTechStack:{
+                type:String
+             },
+             projectLink:{
+                type:String
+             },
+             startDate:{
+                type:Date
+             },
+             endDate:{
+                type:Date
+             },
+             projectSummery:{
+                type:String
+             }
+        }
+    ]
+
+})
+
+const resumeModel=mongoose.model('Resume',resumeSchema);
+
+export default resumeModel
