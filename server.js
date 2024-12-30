@@ -26,7 +26,7 @@ app.listen(4000, () => console.log("Server is running on port 4000"));
 app.post('/api/create-resume', async(req,res)=>{
     try{
          console.log(req.body)
-          const {resumeId,resumeName,email,username}=req.body;
+    
           if(!resumeId || !resumeName || !email || !username)
             return res.status(400).json({error:'all fields are required'})
           const newResume=new resumeModel({
