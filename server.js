@@ -64,7 +64,7 @@ app.get('/api/getResume/:param', async(req,res)=>{
 app.get('/api/getResumeData/:resumeId', async(req,res)=>{
     const resumeId=req.params.resumeId;
     
-    try{
+    try
         const existResume=await resumeModel.find({resumeId});
         if(!existResume)
             return res.status(400).json({error:'user data is not found'})
