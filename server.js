@@ -38,7 +38,7 @@ app.post('/api/create-resume', async(req,res)=>{
              await newResume.save();
              res.status(200).json({newResume});
 
-    }catch(err){
+    }catch(err{
           res.status(500).json({error:err.message})
     }
 })
